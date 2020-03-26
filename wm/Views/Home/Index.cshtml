@@ -1,0 +1,108 @@
+﻿@model List<Models.Anuncio>
+
+@{
+    ViewData["Title"] = "Home Page wm";
+}
+
+
+
+<div class="row">
+
+
+    <div class="col-md-12">
+        <!-- Horizontal Form -->
+        <div class="box box-info">
+            <!-- form start -->
+            <div class="box-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Versão</th>
+                            <th>KM</th>
+                            <th>Ano</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <td>@m.ID</td>
+                                <td>@m.marca</td>
+                                <td>@m.modelo</td>
+                                <td>@m.versao</td>
+                                <td>@m.quilometragem</td>
+                                <td>@m.ano</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="/Edit/@m.ID" class="btn btn-default">Consultar / Editar</a>
+                                        <button type="button" class="btn btn-default btnDeletar" data-id="@m.ID">Deletar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><< Previous</td>
+                            <td>1</td>
+                            <td>Next >></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <div>
+                    <a href="/Edit" class="btn btn-success pull-right">Novo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.box -->
+    </div>
+    <!--/.col (right) -->
+    <!-- /.row -->
+    <!-- /.content -->
+
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".btnDeletar").click(function (e) {
+                //Send the JSON array to Controller using AJAX.
+                var btn = $(this);
+                var d = { id: $(btn).data("id") };
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Home/Del',
+                    data: d,
+                    success: function (r) {
+                        if (r != null && r == true) {
+                            $(btn).closest("tr").hide();
+                        }
+                        else {
+                            console.log(r);
+                        }
+
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+            });
+
+        });
+    </script>
+}

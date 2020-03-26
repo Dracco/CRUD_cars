@@ -1,0 +1,12 @@
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.csprojAssemblyReference.cache
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.csproj.CoreCompileInputs.cache
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.AssemblyInfoInputs.cache
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.AssemblyInfo.cs
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\bin\Debug\netcoreapp2.1\BD.deps.json
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\bin\Debug\netcoreapp2.1\BD.dll
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\bin\Debug\netcoreapp2.1\Models.dll
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\bin\Debug\netcoreapp2.1\Models.pdb
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.csproj.CopyComplete
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\bin\Debug\netcoreapp2.1\BD.pdb
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.dll
+C:\Users\Anderson Duarte\source\repos\Webmotors\BD\obj\Debug\netcoreapp2.1\BD.pdb

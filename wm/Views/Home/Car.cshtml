@@ -1,0 +1,121 @@
+﻿@model Models.Anuncio
+
+@{
+    ViewData["Title"] = "Car";
+}
+
+
+
+<form id="formCadastro" action="/Edit" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label>Make</label>
+                <select class="form-control" required="required" asp-for="marca">
+                    @{
+                        <option value=""> Please select </option>
+                        foreach (var m in Model.marcas)
+                        {
+                            <option value="@m.ID">@m.Name</option>
+                        }
+                    }
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Model</label>
+                <select class="form-control" required="required" asp-for="modelo">
+                    @{
+                        <option value=""> Please select </option>
+                        foreach (var m in Model.modelos)
+                        {
+                            <option value="@m.ID">@m.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Version</label>
+                <select class="form-control" required="required" asp-for="versao">
+                    @{
+                        <option value=""> Please select </option>
+                        foreach (var m in Model.versoes)
+                        {
+                            <option value="@m.ID">@m.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Year</label>
+                <input type="number" required="required" class="form-control" asp-for="ano" maxlength="4" />
+            </div>
+            <div class="form-group">
+                <label>KM</label>
+                <input class="form-control" required="required" asp-for="quilometragem" maxlength="8" type="number" />
+            </div>
+            <div class="form-group">
+                <label>Obs</label>
+                <input class="form-control" required="required" asp-for="observacao" maxlength="200" type="text" />
+            </div>
+            <div class="form-group">
+                <button id="btnSalvar" type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#marca").change(function (e) {
+            $.ajax({
+                url: '@Url.Action("GetModelsJs", "Home")',
+                type: "GET",
+                dataType: "JSON",
+                data: { makeId: $(this).val() },
+                success: function (res) {
+                    $("#modelo").empty();
+                    $("#versao").empty();
+                    console.log(res);
+                    $("#modelo").append("<option value=''>Please Select</option>");
+                    $(res).each(function () {
+                        $("#modelo").append("<option value='" + this.id + "'>" + this.name + "</option>");
+                    });
+
+                },
+                error: function (xhr, status, error) {
+                    console.log('An error occurred');
+                    $("#modelo").val("0");
+                    $("#versao").val("0");
+                }
+            });
+        });
+
+        $("#modelo").change(function (e) {
+            $.ajax({
+                url: '@Url.Action("GetVersionsJs", "Home")',
+                type: "GET",
+                dataType: "JSON",
+                data: { modelId: $(this).val() },
+                success: function (res) {
+                    $("#versao").empty();
+                    console.log(res);
+                    $("#versao").append("<option value=''>Please Select</option>");
+                    $(res).each(function () {
+                        $("#versao").append("<option value='" + this.id + "'>" + this.name + "</option>");
+                    });
+
+                },
+                error: function (xhr, status, error) {
+                    console.log('An error occurred');
+                    $("#versao").val("0");
+                }
+            });
+        });
+        
+    });
+    </script>
+}

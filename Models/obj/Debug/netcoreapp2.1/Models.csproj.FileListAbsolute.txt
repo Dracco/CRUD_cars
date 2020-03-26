@@ -1,0 +1,8 @@
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\bin\Debug\netcoreapp2.1\Models.deps.json
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\bin\Debug\netcoreapp2.1\Models.dll
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\bin\Debug\netcoreapp2.1\Models.pdb
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\obj\Debug\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfoInputs.cache
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\obj\Debug\netcoreapp2.1\Models.AssemblyInfo.cs
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\obj\Debug\netcoreapp2.1\Models.dll
+C:\Users\Anderson Duarte\source\repos\Webmotors\Models\obj\Debug\netcoreapp2.1\Models.pdb
